@@ -4,11 +4,12 @@
 Summary:	NagTrap picks the snmptraps from the database of SNMPTT
 Name:		nagios-%{pkg}
 Version:	0.1.3
-Release:	0.3
+Release:	0.4
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://downloads.sourceforge.net/nagtrap/nagtrap-%{version}.tar.gz
 # Source0-md5:	430a41a4455fbfe3ec5471eab691386e
+Source1:	README
 Patch0:		config.patch
 URL:		http://www.nagtrap.org/doku.php/en:start
 Requires:	nagios-cgi
@@ -31,6 +32,7 @@ and administrate recipient snmptraps from SNMPTT.
 %patch0 -p1
 
 mv %{pkg}/etc config-sample
+cp -p %{SOURCE1} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -44,6 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog THANKS
+%doc ChangeLog THANKS README
 %attr(640,root,http) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{pkg}.php
 %{_appdir}

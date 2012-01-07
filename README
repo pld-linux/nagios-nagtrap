@@ -1,0 +1,9 @@
+Create database
+
+First create a database snmptt. You can do that with follow command:
+
+$ mysqladmin create snmptt
+Now create the tables:
+
+$ mysql -u root -p snmptt < db/snmptt-<version>.sql
+The structure differs slightly from the original, but it is completely compatible.
