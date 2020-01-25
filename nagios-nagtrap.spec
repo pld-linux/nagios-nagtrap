@@ -1,6 +1,5 @@
 %define		pkg	nagtrap
 %define		php_min_version 5.0.0
-%include	/usr/lib/rpm/macros.php
 Summary:	NagTrap picks the snmptraps from the database of SNMPTT
 Name:		nagios-%{pkg}
 Version:	0.1.3
